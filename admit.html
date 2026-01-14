@@ -89,6 +89,7 @@
         border-radius: 8px;
         font-size: 16px;
         text-align: center;
+        box-sizing: border-box;
       }
 
       button {
@@ -126,6 +127,7 @@
         margin-top: 20px;
       }
 
+      /* Updated to support <a> tags as items */
       .branch-item {
         background: #e8f0ff;
         padding: 12px;
@@ -133,6 +135,13 @@
         border: 1px solid #004aad;
         font-weight: 600;
         color: #004aad;
+        display: block; /* Ensures anchor tags fill the grid cell */
+        transition: background 0.3s, color 0.3s;
+      }
+
+      .branch-item:hover {
+        background: #004aad;
+        color: white;
       }
 
       /* ===== FOOTER ===== */
@@ -182,6 +191,7 @@
         <a href="index.html">Home</a>
         <a href="#admit">Admit</a>
         <a href="#verify">Verification</a>
+        <a href="#result">Result</a>
         <a href="#branch">Branch</a>
         <a href="#footer">Contact</a>
       </div>
@@ -194,6 +204,7 @@
       <a href="index.html">Home</a>
       <a href="#admit">Admit</a>
       <a href="#verify">Verification</a>
+      <a href="#result">Result</a>
       <a href="#branch">Branch</a>
       <a href="#footer">Contact</a>
     </div>
@@ -216,16 +227,44 @@
       <button onclick="openVerifyCard()">Download Verification Card</button>
     </div>
 
-    <!-- ===== BRANCH MATERIAL SECTION ===== -->
+    <!-- ===== RESULT SECTION ===== -->
+    <div class="container" id="result">
+      <h1>🏆 BTEUP Result 2025</h1>
+      <p>अपना Enrollment Number दर्ज करें 👇</p>
+      
+      <input type="text" id="resultInput" placeholder="E233123456" />
+      <button onclick="openResult()">Check Result</button>
+    </div>
+
+    <!-- ===== BRANCH MATERIAL SECTION (UPDATED LINKS) ===== -->
     <div class="branch-box" id="branch">
-      <h2>📚 Branch Materials</h2>
+      <h2>📚 Join WhatsApp Groups</h2>
 
       <div class="branch-grid">
-        <div class="branch-item">CSE</div>
-        <div class="branch-item">Mechanical</div>
-        <div class="branch-item">Civil</div>
-        <div class="branch-item">Electrical</div>
-        <div class="branch-item">Electronics</div>
+        <!-- CS/IT -->
+        <a href="https://chat.whatsapp.com/De5w4XwCuoH21t2EUVbi00?mode=hqrt1" target="_blank" class="branch-item">
+          CSE / IT
+        </a>
+        
+        <!-- Mechanical -->
+        <a href="https://chat.whatsapp.com/KJPIYXRQi2zBc3N3WMpDXh?mode=wwt" target="_blank" class="branch-item">
+          Mechanical
+        </a>
+        
+        <!-- Civil -->
+        <a href="https://chat.whatsapp.com/KGSIGVY2WXA2z9wCBkKjnL?mode=wwt" target="_blank" class="branch-item">
+          Civil
+        </a>
+        
+        <!-- Electrical -->
+        <a href="https://chat.whatsapp.com/BRFLLiRRiKuCvQBqnJLlQ2?mode=hqrt1" target="_blank" class="branch-item">
+          Electrical
+        </a>
+        
+        <!-- Electronics -->
+        <a href="https://chat.whatsapp.com/DsPRt7Lmd9wCEnTBpRIl7h?mode=wwt" target="_blank" class="branch-item">
+          Electronics
+        </a>
       </div>
     </div>
 
@@ -262,8 +301,16 @@
         )}`;
         window.open(url, "_blank");
       }
+
+      function openResult() {
+        let enroll = document.getElementById("resultInput").value.trim();
+        if (enroll === "") {
+          alert("कृपया अपना Enrollment Number दर्ज करें!");
+          return;
+        }
+        let url = `https://result.bteexam.com/even/main/rollno.aspx`;
+        window.open(url, "_blank");
+      }
     </script>
   </body>
 </html>
-
-
