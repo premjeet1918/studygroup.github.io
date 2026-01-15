@@ -1,271 +1,295 @@
 <!DOCTYPE html>
 <html lang="hi">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>StudyGroupsHub | Polytechnic Resources</title>
 
     <style>
-      /* ===== GLOBAL ===== */
-      body {
-        margin: 0;
-        font-family: "Poppins", sans-serif;
-        background: #f5f7ff;
-      }
-
-      a {
-        text-decoration: none;
-      }
-
-      /* ===== NAVBAR ===== */
-      .navbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background: #004aad;
-        padding: 10px 20px;
-        color: white;
-      }
-
-      .navbar .logo {
-        display: flex;
-        align-items: center;
-      }
-
-      .navbar .logo img {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-      }
-
-      .navbar .menu {
-        display: flex;
-        gap: 20px;
-      }
-
-      .navbar a {
-        color: white;
-        font-weight: 500;
-        font-size: 16px;
-      }
-
-      /* ===== MOBILE MENU BUTTON ===== */
-      .menu-btn {
-        display: none;
-        font-size: 30px;
-        cursor: pointer;
-        color: white;
-      }
-
-      /* ===== MOBILE DROPDOWN ===== */
-      .mobile-menu {
-        display: none;
-        flex-direction: column;
-        background: #003578;
-        padding: 10px;
-      }
-
-      .mobile-menu a {
-        padding: 10px 0;
-        color: white;
-        border-bottom: 1px solid #ffffff33;
-      }
-
-      /* ===== MAIN SECTION ===== */
-      .container {
-        max-width: 600px;
-        margin: 50px auto;
-        background: white;
-        padding: 25px;
-        border-radius: 15px;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-        text-align: center;
-      }
-
-      input {
-        width: 100%;
-        padding: 12px;
-        border: 2px solid #004aad;
-        border-radius: 8px;
-        font-size: 16px;
-        text-align: center;
-        box-sizing: border-box;
-      }
-
-      button {
-        margin-top: 15px;
-        background: #004aad;
-        color: white;
-        padding: 12px 20px;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        width: 100%;
-        font-size: 17px;
-        transition: 0.3s;
-      }
-
-      button:hover {
-        background: #002d72;
-      }
-
-      /* ===== BRANCH SECTION ===== */
-      .branch-box {
-        max-width: 600px;
-        margin: 30px auto;
-        padding: 20px;
-        background: white;
-        border-radius: 15px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        text-align: center;
-      }
-
-      .branch-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-        gap: 12px;
-        margin-top: 20px;
-      }
-
-      /* Updated to support <a> tags as items */
-      .branch-item {
-        background: #e8f0ff;
-        padding: 12px;
-        border-radius: 10px;
-        border: 1px solid #004aad;
-        font-weight: 600;
-        color: #004aad;
-        display: block; /* Ensures anchor tags fill the grid cell */
-        transition: background 0.3s, color 0.3s;
-      }
-
-      .branch-item:hover {
-        background: #004aad;
-        color: white;
-      }
-
-      /* ===== FOOTER ===== */
-      footer {
-        background: #002d72;
-        color: white;
-        text-align: center;
-        padding: 15px;
-        margin-top: 40px;
-        font-size: 14px;
-      }
-
-      /* ===== MEDIA QUERY (MOBILE RESPONSIVE) ===== */
-      @media (max-width: 768px) {
-        .navbar .menu {
-          display: none;
+        /* ===== GLOBAL ===== */
+        body {
+            margin: 0;
+            font-family: "Poppins", sans-serif;
+            background: #f5f7ff;
         }
 
-        .menu-btn {
-          display: block;
+        a {
+            text-decoration: none;
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #004aad;
+            padding: 10px 20px;
+            color: white;
+        }
+
+        .navbar .logo {
+            display: flex;
+            align-items: center;
         }
 
         .navbar .logo img {
-          width: 35px;
-          height: 35px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
         }
 
-        h1 {
-          font-size: 22px;
+        .navbar .menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar a {
+            color: white;
+            font-weight: 500;
+            font-size: 16px;
+        }
+
+        /* ===== MOBILE MENU BUTTON ===== */
+        .menu-btn {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+            color: white;
+        }
+
+        /* ===== MOBILE DROPDOWN ===== */
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            background: #003578;
+            padding: 10px;
+        }
+
+        .mobile-menu a {
+            padding: 10px 0;
+            color: white;
+            border-bottom: 1px solid #ffffff33;
+        }
+
+        /* ===== MAIN SECTION ===== */
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #004aad;
+            border-radius: 8px;
+            font-size: 16px;
+            text-align: center;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+            /* Added spacing between inputs */
+        }
+
+        button {
+            margin-top: 5px;
+            background: #004aad;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 17px;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #002d72;
+        }
+
+        /* New Button Style for Server 2 */
+        .btn-secondary {
+            background: #28a745;
+            /* Green color */
+        }
+
+        .btn-secondary:hover {
+            background: #218838;
+        }
+
+        .note {
+            font-size: 12px;
+            color: #666;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        /* ===== BRANCH SECTION ===== */
+        .branch-box {
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
 
         .branch-grid {
-          grid-template-columns: repeat(2, 1fr);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 12px;
+            margin-top: 20px;
         }
-      }
+
+        /* Updated to support <a> tags as items */
+        .branch-item {
+            background: #e8f0ff;
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid #004aad;
+            font-weight: 600;
+            color: #004aad;
+            display: block;
+            /* Ensures anchor tags fill the grid cell */
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .branch-item:hover {
+            background: #004aad;
+            color: white;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: #002d72;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+            font-size: 14px;
+        }
+
+        /* ===== MEDIA QUERY (MOBILE RESPONSIVE) ===== */
+        @media (max-width: 768px) {
+            .navbar .menu {
+                display: none;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .navbar .logo img {
+                width: 35px;
+                height: 35px;
+            }
+
+            h1 {
+                font-size: 22px;
+            }
+
+            .branch-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
     </style>
-  </head>
-  <body>
+</head>
+
+<body>
     <!-- ===== NAVIGATION ===== -->
     <div class="navbar">
-      <div class="logo">
-        <img src="img/icon.jpg" alt="Logo" />
-        &nbsp;<strong>StudyGroupsHub</strong>
-      </div>
+        <div class="logo">
+            <img src="img/icon.jpg" alt="Logo" />
+            &nbsp;<strong>StudyGroupsHub</strong>
+        </div>
 
-      <div class="menu">
+        <div class="menu">
+            <a href="index.html">Home</a>
+            <a href="#admit">Admit</a>
+            <a href="#verify">Verification</a>
+            <a href="#result">Result</a>
+            <a href="#branch">Branch</a>
+            <a href="#footer">Contact</a>
+        </div>
+
+        <div class="menu-btn" onclick="toggleMenu()">☰</div>
+    </div>
+
+    <!-- MOBILE MENU DROPDOWN -->
+    <div class="mobile-menu" id="mobileMenu">
         <a href="index.html">Home</a>
         <a href="#admit">Admit</a>
         <a href="#verify">Verification</a>
         <a href="#result">Result</a>
         <a href="#branch">Branch</a>
         <a href="#footer">Contact</a>
-      </div>
-
-      <div class="menu-btn" onclick="toggleMenu()">☰</div>
-    </div>
-
-    <!-- MOBILE MENU DROPDOWN -->
-    <div class="mobile-menu" id="mobileMenu">
-      <a href="index.html">Home</a>
-      <a href="#admit">Admit</a>
-      <a href="#verify">Verification</a>
-      <a href="#result">Result</a>
-      <a href="#branch">Branch</a>
-      <a href="#footer">Contact</a>
     </div>
 
     <!-- ===== ADMIT CARD SECTION ===== -->
     <div class="container" id="admit">
-      <h1>🎓 BTEUP Admit Card 2025</h1>
-      <p>अपना Enrollment Number दर्ज करें 👇</p>
+        <h1>🎓 BTEUP Admit Card 2025</h1>
+        <p>अपना Enrollment Number दर्ज करें 👇</p>
 
-      <input type="text" id="enrollInput" placeholder="E233123456" />
-      <button onclick="openAdmitCard()">Download Admit Card</button>
+        <input type="text" id="enrollInput" placeholder="E233123456" />
+        <button onclick="openAdmitCard()">Download Admit Card</button>
     </div>
 
     <!-- ===== VERIFICATION CARD SECTION ===== -->
     <div class="container" id="verify">
-      <h1>📝 BTEUP Verification Card</h1>
-      <p>अपना Enrollment Number दर्ज करें 👇</p>
+        <h1>📝 BTEUP Verification Card</h1>
+        <p>अपना Enrollment Number दर्ज करें 👇</p>
 
-      <input type="text" id="verifyInput" placeholder="E24XXXXXXX" />
-      <button onclick="openVerifyCard()">Download Verification Card</button>
+        <input type="text" id="verifyInput" placeholder="E24XXXXXXX" />
+        <button onclick="openVerifyCard()">Download Verification Card</button>
     </div>
 
-    <!-- ===== RESULT SECTION ===== -->
+    <!-- ===== RESULT SECTION (UPDATED) ===== -->
     <div class="container" id="result">
-      <h1>🏆 BTEUP Result 2025</h1>
-      <p>अपना Enrollment Number दर्ज करें 👇</p>
-      
-      <input type="text" id="resultInput" placeholder="E233123456" />
-      <button onclick="openResult()">Check Result</button>
+        <h1>🏆 BTEUP Result 2025</h1>
+        <p>अपना विवरण दर्ज करें 👇</p>
+
+        <!-- Enrollment Field -->
+        <input type="text" id="resultEnroll" placeholder="Enrollment No (E233...)" />
+
+        <!-- DOB Field -->
+        <!-- Updated Placeholder to show correct format -->
+        <input type="text" id="resultDob" placeholder="DOB (ex: 11/08/2006)" onfocus="(this.type='date')"
+            onblur="(this.type='text')" />
+
+        <button onclick="openResult('server1')">Check Result (New Server)</button>
+
+        <p class="note">
+            नोट: यह लिंक सीधे BTEUP के टेस्ट सर्वर से कनेक्ट होता है।
+        </p>
     </div>
 
-    <!-- ===== BRANCH MATERIAL SECTION (UPDATED LINKS) ===== -->
+    <!-- ===== BRANCH MATERIAL SECTION ===== -->
     <div class="branch-box" id="branch">
-      <h2>📚 Join WhatsApp Groups</h2>
+        <h2>📚 Join WhatsApp Groups</h2>
 
-      <div class="branch-grid">
-        <!-- CS/IT -->
-        <a href="https://chat.whatsapp.com/De5w4XwCuoH21t2EUVbi00?mode=hqrt1" target="_blank" class="branch-item">
-          CSE / IT
-        </a>
-        
-        <!-- Mechanical -->
-        <a href="https://chat.whatsapp.com/KJPIYXRQi2zBc3N3WMpDXh?mode=wwt" target="_blank" class="branch-item">
-          Mechanical
-        </a>
-        
-        <!-- Civil -->
-        <a href="https://chat.whatsapp.com/KGSIGVY2WXA2z9wCBkKjnL?mode=wwt" target="_blank" class="branch-item">
-          Civil
-        </a>
-        
-        <!-- Electrical -->
-        <a href="https://chat.whatsapp.com/BRFLLiRRiKuCvQBqnJLlQ2?mode=hqrt1" target="_blank" class="branch-item">
-          Electrical
-        </a>
-        
-        <!-- Electronics -->
-        <a href="https://chat.whatsapp.com/DsPRt7Lmd9wCEnTBpRIl7h?mode=wwt" target="_blank" class="branch-item">
-          Electronics
-        </a>
-      </div>
+        <div class="branch-grid">
+            <a href="https://chat.whatsapp.com/De5w4XwCuoH21t2EUVbi00?mode=hqrt1" target="_blank" class="branch-item">
+                CSE / IT
+            </a>
+            <a href="https://chat.whatsapp.com/KJPIYXRQi2zBc3N3WMpDXh?mode=wwt" target="_blank" class="branch-item">
+                Mechanical
+            </a>
+            <a href="https://chat.whatsapp.com/KGSIGVY2WXA2z9wCBkKjnL?mode=wwt" target="_blank" class="branch-item">
+                Civil
+            </a>
+            <a href="https://chat.whatsapp.com/BRFLLiRRiKuCvQBqnJLlQ2?mode=hqrt1" target="_blank" class="branch-item">
+                Electrical
+            </a>
+            <a href="https://chat.whatsapp.com/DsPRt7Lmd9wCEnTBpRIl7h?mode=wwt" target="_blank" class="branch-item">
+                Electronics
+            </a>
+        </div>
     </div>
 
     <!-- ===== FOOTER ===== -->
@@ -273,45 +297,76 @@
 
     <!-- ===== JAVASCRIPT ===== -->
     <script>
-      function toggleMenu() {
-        let menu = document.getElementById("mobileMenu");
-        menu.style.display = menu.style.display === "flex" ? "none" : "flex";
-      }
-
-      function openAdmitCard() {
-        let enroll = document.getElementById("enrollInput").value.trim();
-        if (enroll === "") {
-          alert("कृपया अपना Enrollment Number दर्ज करें!");
-          return;
+        function toggleMenu() {
+            let menu = document.getElementById("mobileMenu");
+            menu.style.display = menu.style.display === "flex" ? "none" : "flex";
         }
-        let url = `https://bteup.ac.in/ESeva/Student/AdmitCard.aspx?EnrollNumber=${encodeURIComponent(
-          enroll
-        )}`;
-        window.open(url, "_blank");
-      }
 
-      function openVerifyCard() {
-        let enroll = document.getElementById("verifyInput").value.trim();
-        if (enroll === "") {
-          alert("कृपया अपना Enrollment Number दर्ज करें!");
-          return;
+        function openAdmitCard() {
+            let enroll = document.getElementById("enrollInput").value.trim();
+            if (enroll === "") {
+                alert("कृपया अपना Enrollment Number दर्ज करें!");
+                return;
+            }
+            let url = `https://bteup.ac.in/ESeva/Student/AdmitCard.aspx?EnrollNumber=${encodeURIComponent(
+                enroll
+            )}`;
+            window.open(url, "_blank");
         }
-        let url = `https://bteup.ac.in/ESeva/Student/VerificationCard.aspx?EnrollNumber=${encodeURIComponent(
-          enroll
-        )}`;
-        window.open(url, "_blank");
-      }
 
-      function openResult() {
-        let enroll = document.getElementById("resultInput").value.trim();
-        if (enroll === "") {
-          alert("कृपया अपना Enrollment Number दर्ज करें!");
-          return;
+        function openVerifyCard() {
+            let enroll = document.getElementById("verifyInput").value.trim();
+            if (enroll === "") {
+                alert("कृपया अपना Enrollment Number दर्ज करें!");
+                return;
+            }
+            let url = `https://bteup.ac.in/ESeva/Student/VerificationCard.aspx?EnrollNumber=${encodeURIComponent(
+                enroll
+            )}`;
+            window.open(url, "_blank");
         }
-        let url = `https://result.bteexam.com/even/main/rollno.aspx`;
-        window.open(url, "_blank");
-      }
+
+        // ===== UPDATED RESULT FUNCTION WITH NEW LOGIC =====
+        function openResult() {
+            let enroll = document.getElementById("resultEnroll").value.trim();
+            let dobInput = document.getElementById("resultDob").value.trim();
+
+            if (enroll === "" || dobInput === "") {
+                alert("कृपया Enrollment Number और DOB दोनों दर्ज करें!");
+                return;
+            }
+
+            // 1. Format DOB to DD/MM/YYYY exactly (Example: 11/08/2006)
+            let formattedDob = dobInput;
+
+            // If input is from Date Picker (YYYY-MM-DD), convert it
+            if (dobInput.includes("-")) {
+                let parts = dobInput.split("-");
+                if (parts.length === 3) {
+                    // parts[0]=YYYY, parts[1]=MM, parts[2]=DD
+                    formattedDob = `${parts[2]}/${parts[1]}/${parts[0]}`;
+                }
+            }
+
+            // 2. ENCODE PARAMETERS (As per the working code provided)
+            try {
+                let encEnroll = btoa(enroll);
+                let encDob = btoa(formattedDob);
+
+                // Replace '=' with '%3D' as per the specific requirement of the result server
+                encDob = encDob.replace(/=/g, "%3D");
+
+                // 3. Construct the NEW URL
+                let url = `https://test.bteupexam.co.in/Odd_Semester/main/result.aspx?id=${encEnroll}&id2=${encDob}`;
+
+                window.open(url, "_blank");
+
+            } catch (e) {
+                alert("Error processing details. Please check your inputs.");
+                console.error(e);
+            }
+        }
     </script>
-  </body>
-</html>
+</body>
 
+</html>
