@@ -257,15 +257,13 @@
         <!-- Enrollment Field -->
         <input type="text" id="resultEnroll" placeholder="Enrollment No (E233...)" />
 
-        <!-- DOB Field -->
-        <!-- Updated Placeholder to show correct format -->
-        <input type="text" id="resultDob" placeholder="DOB (ex: 11/08/2006)" onfocus="(this.type='date')"
-            onblur="(this.type='text')" />
+        <!-- DOB Field: Changed to Text for Manual Input -->
+        <input type="text" id="resultDob" placeholder="DOB (DD/MM/YYYY) e.g. 11/08/2006" />
 
         <button onclick="openResult('server1')">Check Result (New Server)</button>
 
         <p class="note">
-            नोट: यह लिंक सीधे BTEUP के टेस्ट सर्वर से कनेक्ट होता है।
+            नोट: जन्मतिथि (DOB) इसी फॉर्मेट में लिखें: 11/08/2006
         </p>
     </div>
 
@@ -326,7 +324,7 @@
             window.open(url, "_blank");
         }
 
-        // ===== UPDATED RESULT FUNCTION WITH NEW LOGIC =====
+        // ===== UPDATED RESULT FUNCTION FOR MANUAL INPUT =====
         function openResult() {
             let enroll = document.getElementById("resultEnroll").value.trim();
             let dobInput = document.getElementById("resultDob").value.trim();
@@ -336,24 +334,15 @@
                 return;
             }
 
-            // 1. Format DOB to DD/MM/YYYY exactly (Example: 11/08/2006)
-            let formattedDob = dobInput;
+            // Clean up DOB format: Replace '-' or '.' with '/' to ensure DD/MM/YYYY
+            let formattedDob = dobInput.replace(/-/g, "/").replace(/\./g, "/");
 
-            // If input is from Date Picker (YYYY-MM-DD), convert it
-            if (dobInput.includes("-")) {
-                let parts = dobInput.split("-");
-                if (parts.length === 3) {
-                    // parts[0]=YYYY, parts[1]=MM, parts[2]=DD
-                    formattedDob = `${parts[2]}/${parts[1]}/${parts[0]}`;
-                }
-            }
-
-            // 2. ENCODE PARAMETERS (As per the working code provided)
+            // 2. ENCODE PARAMETERS
             try {
                 let encEnroll = btoa(enroll);
                 let encDob = btoa(formattedDob);
 
-                // Replace '=' with '%3D' as per the specific requirement of the result server
+                // Replace '=' with '%3D' as per server requirement
                 encDob = encDob.replace(/=/g, "%3D");
 
                 // 3. Construct the NEW URL
@@ -370,4 +359,3 @@
 </body>
 
 </html>
-
